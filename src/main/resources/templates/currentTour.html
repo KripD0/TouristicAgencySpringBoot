@@ -2,79 +2,76 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Туристическое агентство - Детали тура</title>
-  <!-- Подключение Bootstrap CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Туристическое агентство - Детали тура</title>
+    <!-- Подключение Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 </head>
 
 <body>
 <!-- Навигационное меню -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="/hotTours" style="font-size: 30px">Горячие Туры</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav" style="font-size: 30px">
-    <ul class="navbar-nav ml-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="/hotTours">Главная</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/hotTours/aboutUs">О нас</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/hotTours/tours">Туры</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Контакты</a>
-      </li>
-    </ul>
-  </div>
+    <a class="navbar-brand" href="/hotTours" style="font-size: 30px">Горячие Туры</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav" style="font-size: 30px">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/hotTours">Главная</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/hotTours/aboutUs">О нас</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/hotTours/tours">Туры</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/hotTours/contacts">Контакты</a>
+            </li>
+        </ul>
+    </div>
 </nav>
 
 
 <!-- Заголовок страницы -->
 <header class="jumbotron">
-  <div class="container">
-    <h1 class="display-4">Детали тура</h1>
-  </div>
+    <div class="container">
+        <h1 class="display-4">Детали тура:</h1>
+    </div>
 </header>
 
 <!-- Содержимое страницы тура -->
 <section class="tour-details">
-  <div class="container">
-    <div class="row">
-      <div class="row">
-        <div class="col-md-12">
-          <h2>Изображения:</h2>
-          <div class="image-gallery">
-            <div>
-              <img th:src="*{'data:image/png;base64,'+ ${image.get}" alt="" />
+    <div class="container">
+        <div class="row">
+            <h2 th:text="${tour.getName()}" style="font-size: 70px; text-align: center">Название:</h2>
+            <div class="row">
+                <div class="col-md-12 d-flex justify-content-center align-items-center">
+                    <img th:src="@{'data:image/png;base64,' + ${imageData}}" alt="Картинка">
+                </div>
             </div>
-          </div>
+            <div class="col-md-12">
+                <p style="font-size: 35px"><strong>Страна:</strong> <span th:text="${tour.getCountry()}"></span></p>
+                <p style="font-size: 35px"><strong>Город:</strong> <span th:text="${tour.getTown()}"></span></p>
+                <p style="font-size: 35px"><strong>Длительность:</strong> <span th:text="${tour.getDays()}"></span> дней
+                </p>
+                <p style="font-size: 35px"><strong>Стоимость:</strong> ₽<span th:text="${tour.getCost()}"></span></p>
+                <p style="text-align: center; font-size: 35px; ">Описание</p>
+                <p th:text="${tour.getDescription()} " style="font-size: 35px"></p>
+            </div>
         </div>
-      </div>
-      <div class="col-md-12">
-        <h2 th:text="${tour.getName()}" style="font-size: 70px; text-align: center">Название:</h2>
-        <p style="font-size: 35px"><strong>Страна:</strong> <span th:text="${tour.getCountry()}"></span></p>
-        <p style="font-size: 35px"><strong>Город:</strong> <span th:text="${tour.getTown()}"></span></p>
-        <p style="font-size: 35px"><strong>Длительность:</strong> <span th:text="${tour.getDays()}"></span> дней</p>
-        <p style="font-size: 35px"><strong>Стоимость:</strong> ₽<span th:text="${tour.getCost()}"></span></p>
-        <p th:text="${tour.getDescription()} " style="font-size: 35px"></p>
-      </div>
     </div>
-  </div>
-  </div>
+    </div>
 </section>
 
 <!-- Подвал -->
 <footer class="footer bg-dark text-light text-center py-3 fixed-bottom">
-  <div class="container">
-    <p>&copy; 2023 Туристическое агентство. Все права защищены.</p>
-  </div>
+    <div class="container">
+        <p>&copy; 2023 Туристическое агентство. Все права защищены.</p>
+    </div>
 </footer>
 
 <!-- Подключение Bootstrap JS и jQuery -->

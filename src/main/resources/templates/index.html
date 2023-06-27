@@ -29,7 +29,7 @@
                 <a class="nav-link" href="/hotTours/tours">Туры</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Контакты</a>
+                <a class="nav-link" href="/hotTours/contacts">Контакты</a>
             </li>
         </ul>
     </div>
@@ -48,11 +48,11 @@
     <div class="container">
         <h2 class="text-center mb-2">О нас</h2>
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-6 mt-2">
                 <img src="/images/about-image.jpg"
-                     alt="О нас" class="img-fluid w-75 mb-2">
+                     alt="О нас" class="img-fluid w-75">
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 mt-4">
                 <p>Мы - ведущее туристическое агентство, предлагающее широкий спектр услуг по организации путешествий.
                     Наша
                     команда опытных специалистов поможет вам выбрать лучшее направление и составить индивидуальный
@@ -69,8 +69,8 @@
         <h2 class="text-center mb-4">Наши услуги</h2>
         <div class="row">
             <div class="col-md-4">
-                <div class="card">
-                    <img src="service1-image.jpg" class="card-img-top" alt="Услуга 1">
+                <div class="card" style="height: 600px">
+                    <img src="/images/track.png" class="card-img-top" alt="Услуга 1">
                     <div class="card-body">
                         <h5 class="card-title">Экскурсии</h5>
                         <p class="card-text">Мы предлагаем широкий выбор экскурсий на различные
@@ -79,8 +79,8 @@
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="card">
-                    <img src="service2-image.jpg" class="card-img-top" alt="Услуга 2">
+                <div class="card" style="height: 600px">
+                    <img src="/images/air.png" class="card-img-top" alt="Услуга 2" style="margin-bottom: 195px">
                     <div class="card-body">
                         <h5 class="card-title">Горящие туры</h5>
                         <p class="card-text">У нас вы можете найти актуальные предложения по горящим турам по всему
@@ -89,8 +89,8 @@
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="card">
-                    <img src="service3-image.jpg" class="card-img-top" alt="Услуга 3">
+                <div class="card" style="height: 600px">
+                    <img src="/images/beach.png" class="card-img-top" alt="Услуга 3" style="margin-bottom: 180px">
                     <div class="card-body">
                         <h5 class="card-title">Отдых на море</h5>
                         <p class="card-text">Предлагаем отдых на лучших курортах со всеми удобствами и
@@ -107,7 +107,7 @@
     <div class="container">
         <h2 class="text-center mb-4">Контакты</h2>
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <form>
                     <div class="form-group">
                         <label for="name">Имя</label>
@@ -121,23 +121,60 @@
                         <label for="message">Сообщение</label>
                         <textarea class="form-control" id="message" rows="5" required></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary">Отправить</button>
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-md-6 d-flex justify-content-center">
+                            <button type="submit" class="btn btn-primary w-75">Отправить</button>
+                        </div>
+                    </div>
                 </form>
-            </div>
-            <div class="col-md-6">
-                <h5>Контактная информация</h5>
-                <p>Телефон: 8-800-555-35-35</p>
-                <p>Email: prigojenJenya@mail.ru</p>
-                <p>Адрес: г. Москва, ул. Пригожина , 2А</p>
             </div>
         </div>
     </div>
 </section>
 
 <!-- Подвал -->
-<footer class="footer bg-dark text-light text-center py-3 fixed-bottom">
+<footer class="footer bg-dark text-white mt-4">
     <div class="container">
-        <p>&copy; 2023 Туристическое агентство. Все права защищены.</p>
+        <div class="row">
+            <div class="col-md-6" style="font-size: 0.9em">
+                <h4 class="d-flex justify-content-center align-content-center">Контакты</h4>
+                <ul style="list-style-type: none">
+                    <li>
+                        Email: <a href="mailto:info@hott.ru">info@hott.ru</a>
+                    </li>
+                    <li>
+                        Телефон: <a href="tel:+78007750220">+7-800-775-02-20</a> (для туристов)
+                    </li>
+                    <li>
+                        Телефон: <a href="tel:+74996734131">+7-499-673-41-31</a> (для агентств)
+                    </li>
+                    <li>Адресс: 119021 , г. Москва,
+                        улица Зубовский бульвар, д 16-20,
+                        строение 1,Помещение Х1, комната 3
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <h4 class="d-flex justify-content-center align-content-center">Социальные сети</h4>
+                <div class="d-flex justify-content-center">
+                    <a href="https://vk.com/hott.travel" target="_blank" class="mr-2">
+                        <img src="/images/vk.png" alt="Facebook" width="50vw" height="50vw">
+                    </a>
+                    <a href="https://ok.ru/hott.travel" target="_blank">
+                        <img src="/images/ok.png" alt="Instagram" width="50vw" height="50vw">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="row text-center">
+            <h4 style="font-size: 1.1em">© 2003-2023 Управляющая компания Объединенной сети ТБГ и «Горячие туры»</h4>
+            <ul style="list-style-type: none; font-size: 0.6em">
+                <li>Представленная на сайте информация
+                    носит справочный характер
+                    и не является публичной офертой
+                </li>
+            </ul>
+        </div>
     </div>
 </footer>
 
