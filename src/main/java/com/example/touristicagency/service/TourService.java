@@ -38,4 +38,9 @@ public class TourService {
     public Tour findById(int id){
         return tourRepository.findById(id).orElse(null);
     }
+
+    @Transactional
+    public void deleteTour(int id){
+        imageRepository.delete(imageRepository.findByTourId(id));
+    }
 }

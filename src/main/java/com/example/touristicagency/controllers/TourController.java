@@ -64,6 +64,12 @@ public class TourController {
         return "redirect:/hotTours/tours";
     }
 
+    @DeleteMapping("/tour/{id}")
+    public String deleteTour(@PathVariable("id") int id){
+        tourService.deleteTour(id);
+        return "redirect:/hotTours/tours";
+    }
+
     @GetMapping("/contacts")
     public String getContactPage(){
         return "contacts";
