@@ -43,4 +43,16 @@ public class TourService {
     public void deleteTour(int id){
         imageRepository.delete(imageRepository.findByTourId(id));
     }
+
+    @Transactional
+    public void updateTour(Tour tour, MultipartFile loadedImage, int id) throws IOException {
+        tour.setId(id);
+        tourRepository.save(tour);
+        if(!loadedImage.isEmpty()){
+            Image image = imageRepository.findByTourId(tour.getId());
+            image.setData(loadedImage.getBytes());
+            image.setName(loadedImage.getName());
+            imageRepository.save(image);
+        }
+    }
 }

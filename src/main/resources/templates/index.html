@@ -9,9 +9,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 </head>
 
-<body style="background-image: url('/images/backgroundIndex.jpg'); background-size: cover; background-position: center;">
+<body style="background-image: url('/images/background.jpg'); background-size: cover; background-position: center;">
 <!-- Навигационное меню -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #00cccc">
     <a class="navbar-brand" href="/hotTours">
         <img src="/images/logo.png" style="height: 2vw" alt="Bebra">
     </a>
@@ -38,101 +38,81 @@
 </nav>
 
 <!-- Шапка с текстом и изображением -->
-<header class="jumbotron">
-    <div class="container">
-        <h1 class="display-4">Добро пожаловать в наше туристическое агентство!</h1>
-        <p class="lead">Мы поможем вам организовать незабываемое путешествие.</p>
-    </div>
-</header>
-
-<!-- О нас -->
-<section class="about-section">
-    <div class="container">
-        <h2 class="text-center mb-2">О нас</h2>
-        <div class="row">
-            <div class="col-md-6 mt-2">
-                <img src="/images/about-image.jpg"
-                     alt="О нас" class="img-fluid w-75">
-            </div>
-            <div class="col-md-6 mt-4">
-                <p>Мы - ведущее туристическое агентство, предлагающее широкий спектр услуг по организации путешествий.
-                    Наша
-                    команда опытных специалистов поможет вам выбрать лучшее направление и составить индивидуальный
-                    маршрут.</p>
-                <p>Мы сотрудничаем с проверенными партнерами и гарантируем высокое качество предоставляемых услуг.</p>
-            </div>
+<div class="container rounded my-0" style="background-color: #00cc99">
+    <h1>Добро пожаловать в наше туристическое агентство!</h1>
+    <p class="my-0">Мы поможем вам организовать незабываемое путешествие.</p>
+    <h2 class="text-center mb-2">О нас</h2>
+    <div class="row">
+        <div class="col-md-6 mt-2">
+            <img src="/images/about-image.jpg"
+                 alt="О нас" class="img-fluid w-75">
+        </div>
+        <div class="col-md-6 mt-4">
+            <p>Мы - ведущее туристическое агентство, предлагающее широкий спектр услуг по организации путешествий.
+                Наша
+                команда опытных специалистов поможет вам выбрать лучшее направление и составить индивидуальный
+                маршрут.</p>
+            <p>Мы сотрудничаем с проверенными партнерами и гарантируем высокое качество предоставляемых услуг.</p>
         </div>
     </div>
-</section>
-
-<!-- Услуги -->
-<section class="services-section bg-light" style="background-image: url('/images/backgroundIndex.jpg'); background-size: cover; background-position: center;">
-    <div class="container" >
-        <h2 class="text-center mb-4">Наши услуги</h2>
-        <div class="row">
-            <div class="col-md-4">
-                <div class="card" style="height: 600px">
-                    <img src="/images/track.png" class="card-img-top" alt="Услуга 1">
-                    <div class="card-body">
-                        <h5 class="card-title">Экскурсии</h5>
-                        <p class="card-text">Мы предлагаем широкий выбор экскурсий на различные
-                            достопримечательности.</p>
-                    </div>
+    <h2 class="text-center mb-4">Наши услуги</h2>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card" style="height: 600px">
+                <img src="/images/track.png" class="card-img-top" alt="Услуга 1">
+                <div class="card-body">
+                    <h5 class="card-title">Экскурсии</h5>
+                    <p class="card-text">Мы предлагаем широкий выбор экскурсий на различные
+                        достопримечательности.</p>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="card" style="height: 600px">
-                    <img src="/images/air.png" class="card-img-top" alt="Услуга 2" style="margin-bottom: 195px">
-                    <div class="card-body">
-                        <h5 class="card-title">Горящие туры</h5>
-                        <p class="card-text">У нас вы можете найти актуальные предложения по горящим турам по всему
-                            миру.</p>
-                    </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card" style="height: 600px">
+                <img src="/images/air.png" class="card-img-top" alt="Услуга 2" style="margin-bottom: 195px">
+                <div class="card-body">
+                    <h5 class="card-title">Горящие туры</h5>
+                    <p class="card-text">У нас вы можете найти актуальные предложения по горящим турам по всему
+                        миру.</p>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="card" style="height: 600px">
-                    <img src="/images/beach.png" class="card-img-top" alt="Услуга 3" style="margin-bottom: 180px">
-                    <div class="card-body">
-                        <h5 class="card-title">Отдых на море</h5>
-                        <p class="card-text">Предлагаем отдых на лучших курортах со всеми удобствами и
-                            развлечениями.</p>
-                    </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card" style="height: 600px">
+                <img src="/images/beach.png" class="card-img-top" alt="Услуга 3" style="margin-bottom: 180px">
+                <div class="card-body">
+                    <h5 class="card-title">Отдых на море</h5>
+                    <p class="card-text">Предлагаем отдых на лучших курортах со всеми удобствами и
+                        развлечениями.</p>
                 </div>
             </div>
         </div>
     </div>
-</section>
-
-<!-- Контакты -->
-<section class="contact-section">
-    <div class="container">
-        <h2 class="text-center mb-4">Контакты</h2>
-        <div class="row">
-            <div class="col-md-12">
-                <form>
-                    <div class="form-group">
-                        <label for="name">Имя</label>
-                        <input type="text" class="form-control" id="name" required>
+    <h2 class="text-center mb-4">Контакты</h2>
+    <div class="row px-5">
+        <div class="col-md-12">
+            <form>
+                <div class="form-group">
+                    <label for="name">Имя</label>
+                    <input type="text" class="form-control" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Сообщение</label>
+                    <textarea class="form-control mb-3" id="message" rows="5" required></textarea>
+                </div>
+                <div class="row d-flex justify-content-center">
+                    <div class="col-md-6 d-flex justify-content-center mb-3">
+                        <button type="submit" class="btn btn-primary w-75">Отправить</button>
                     </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" class="form-control" id="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Сообщение</label>
-                        <textarea class="form-control" id="message" rows="5" required></textarea>
-                    </div>
-                    <div class="row d-flex justify-content-center">
-                        <div class="col-md-6 d-flex justify-content-center">
-                            <button type="submit" class="btn btn-primary w-75">Отправить</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
+                </div>
+            </form>
         </div>
     </div>
-</section>
+</div>
 
 <!-- Подвал -->
 <footer class="footer bg-dark text-white mt-4">

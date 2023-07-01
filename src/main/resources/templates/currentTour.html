@@ -11,7 +11,7 @@
 
 <body style="background-image: url('/images/backgroundIndex.jpg'); background-size: cover; background-position: center;">
 <!-- Навигационное меню -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #00cccc">
     <a class="navbar-brand" href="/hotTours">
         <img src="/images/logo.png" style="height: 2vw" alt="Bebra">
     </a>
@@ -49,9 +49,17 @@
 <section class="tour-details">
     <div class="container">
         <div class="row">
-            <form th:action="@{/hotTours/tour/{id}(id=${tour.getId()})}" th:method="delete" action="/hotTours/tour/">
-                <button type="submit" class="btn btn-primary">Удалить тур</button>
-            </form>
+            <div class="col-2">
+                <form th:action="@{/hotTours/tour/{id}(id=${tour.getId()})}" th:method="delete"
+                      action="/hotTours/tour/">
+                    <button type="submit" class="btn btn-primary">Удалить тур</button>
+                </form>
+            </div>
+            <div class="col-2">
+                <a th:href="@{/hotTours/tour/{id}/edit(id=${tour.getId()})}">
+                    <button type="button" class="btn btn-primary">Редактировать тур</button>
+                </a>
+            </div>
         </div>
         <div class="row">
             <h2 th:text="${tour.getName()}" style="font-size: 70px; text-align: center">Название:</h2>
@@ -65,7 +73,7 @@
                 <p style="font-size: 35px"><strong>Город:</strong> <span th:text="${tour.getTown()}"></span></p>
                 <p style="font-size: 35px"><strong>Длительность:</strong> <span th:text="${tour.getDays()}"></span> дней
                 </p>
-                <p style="font-size: 35px"><strong>Стоимость:</strong> ₽<span th:text="${tour.getCost()}"></span></p>
+                <p style="font-size: 35px"><strong>Стоимость: </strong><span th:text="${tour.getCost()}"></span> ₽</p>
                 <p style="text-align: center; font-size: 35px; ">Описание</p>
                 <p th:text="${tour.getDescription()} " style="font-size: 25px"></p>
             </div>

@@ -74,4 +74,16 @@ public class TourController {
     public String getContactPage(){
         return "contacts";
     }
+
+    @GetMapping("/tour/{id}/edit")
+    public String getEditPage(Model model, @PathVariable("id") int id){
+        model.addAttribute("tour", tourService.findById(id));
+        return "editTour";
+    }
+
+    @PatchMapping("/tour/{id}")
+    public String editTour(@ModelAttribute("tour") Tour tour, @RequestParam("image") MultipartFile image, @PathVariable("id") int id) throws IOException {
+        tourService.updateTour(tour, image, id);
+        return "redirect:/hotTours/tours";
+    }
 }
