@@ -1,11 +1,17 @@
+server:
+  port: 8081
+
 spring:
+  liquibase:
+    change-log: classpath:liquibase/databasechangelog.xml
   datasource:
     driver-class-name: org.postgresql.Driver
     username: postgres
     password: postgres
     url: jdbc:postgresql://localhost:5432/touristicagency
   jpa:
-    show-sql: true
+    show-sql: false
+    generate-ddl: false
   mvc:
     hidden-method:
       filter:

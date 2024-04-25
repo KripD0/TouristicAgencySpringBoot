@@ -3,9 +3,18 @@ package com.example.touristicagency.controllers;
 import com.example.touristicagency.model.Tour;
 import com.example.touristicagency.service.ImageService;
 import com.example.touristicagency.service.TourService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PatchMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
@@ -14,15 +23,11 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/hotTours")
+@RequiredArgsConstructor
 public class TourController {
 
     private final TourService tourService;
     private final ImageService imageService;
-
-    public TourController(TourService tourService, ImageService imageService) {
-        this.tourService = tourService;
-        this.imageService = imageService;
-    }
 
     @GetMapping
     public String getMainPage() {
@@ -50,6 +55,7 @@ public class TourController {
     }
 
     @GetMapping("/add-tour")
+    @PreAuthorize("hasRole('ADMIN')")
     public String createTourPage(@ModelAttribute("tour") Tour tour) {
         return "addTour";
     }
@@ -65,18 +71,19 @@ public class TourController {
     }
 
     @DeleteMapping("/tour/{id}")
-    public String deleteTour(@PathVariable("id") int id){
+    public String deleteTour(@PathVariable("id") int id) {
         tourService.deleteTour(id);
         return "redirect:/hotTours/tours";
     }
 
     @GetMapping("/contacts")
-    public String getContactPage(){
+    public String getContactPage() {
         return "contacts";
     }
 
     @GetMapping("/tour/{id}/edit")
-    public String getEditPage(Model model, @PathVariable("id") int id){
+    @PreAuthorize("hasRole('ADMIN')")
+    public String getEditPage(Model model, @PathVariable("id") int id) {
         model.addAttribute("tour", tourService.findById(id));
         return "editTour";
     }

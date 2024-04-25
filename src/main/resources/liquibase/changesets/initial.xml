@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd">
+    <changeSet id="create_tables" author="KripDo">
+
+        <createTable tableName="users">
+            <column name="username" type="varchar">
+                <constraints primaryKey="true" unique="true"/>
+            </column>
+            <column name="password" type="varchar"/>
+            <column name="role" type="varchar"/>
+        </createTable>
+
+        <createTable tableName="tours">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="cost" type="varchar"/>
+            <column name="country" type="varchar"/>
+            <column name="days" type="int"/>
+            <column name="description" type="varchar"/>
+            <column name="name" type="varchar"/>
+            <column name="town" type="varchar"/>
+        </createTable>
+
+        <createTable tableName="image">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="data" type="bytea"/>
+            <column name="name" type="varchar"/>
+            <column name="tour_id" type="bigint">
+                <constraints foreignKeyName="image_tours_fk" references="tours(id)"/>
+            </column>
+        </createTable>
+
+            <createSequence sequenceName="image_seq" startValue="1" incrementBy="50"/>
+            <createSequence sequenceName="tours_seq" startValue="1" incrementBy="50"/>
+
+            <rollback>
+                <dropTable tableName="users"/>
+                <dropTable tableName="tours"/>
+                <dropTable tableName="image"/>
+                <dropSequence sequenceName="image_seq"/>
+                <dropSequence sequenceName="tours_seq"/>
+            </rollback>
+
+    </changeSet>
+</databaseChangeLog>
